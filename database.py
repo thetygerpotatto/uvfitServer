@@ -3,7 +3,10 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 
-DATABASE_URL = "postgresql://potatto:laura6002@localhost:5432/uvfit"
+DATABASE_URL = (
+    "mssql+pyodbc://CloudSA58d78e55:>hS6Kw#)G_c=tgk@datauvfit.database.windows.net:1433/"
+    "uvfitdata?driver=ODBC+Driver+18+for+SQL+Server&Encrypt=yes&TrustServerCertificate=no"
+)
 
 engine = create_engine(DATABASE_URL)
 
