@@ -65,13 +65,12 @@ def register(data: LoginRequest, db: Session = Depends(get_db)):
     print(user)
     if not user:
         new_user = Usuario(email=data.email,
-                           password=pwd_context.hash(str(data.password)),
-                           isNew=True)
+                           password=pwd_context.hash(str(data.password)))
         print("password hash: ", pwd_context.hash(data.password))
         db.add(new_user)
         db.commit()
 
-        userdata = UserData(user_email=data.email)
+        userdata = UserData(user_email=data.email, isNew=True)
         db.add(userdata)
         db.commit()
 
