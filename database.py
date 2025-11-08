@@ -12,7 +12,14 @@ engine = create_engine(DATABASE_URL)
 
 SessionLocal = sessionmaker(autocommit= False, autoflush=False, bind=engine)
 
-Base = declarative_base()
+class BaseTable:
+    def __getitem__(self, key):
+        return getattr(self, key)
+
+    def __setitem__(self, key, value):
+        setattr(self, key, value)
+
+Base = declarative_base(cls=BaseTable)
 
 def get_db():
     db = SessionLocal()
