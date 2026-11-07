@@ -1,3 +1,4 @@
+import os
 from datetime import datetime, timedelta
 from jose import JWTError, jwt
 from passlib.context import CryptContext
@@ -9,7 +10,7 @@ from models import Usuario
 
 
 # Secret key and algorithm
-SECRET_KEY = "supersecretkey"  # change this in production
+SECRET_KEY = os.environ["JWT_SECRET_KEY"]  # set in the environment, never in code
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_HOURS = 12
 

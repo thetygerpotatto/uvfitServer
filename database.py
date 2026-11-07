@@ -3,10 +3,11 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 
-DATABASE_URL = (
-    "mssql+pyodbc://CloudSA58d78e55:>hS6Kw#)G_c=tgk@datauvfit.database.windows.net:1433/"
-    "uvfitdata?driver=ODBC+Driver+18+for+SQL+Server&Encrypt=yes&TrustServerCertificate=no"
-)
+import os
+
+# Set DATABASE_URL in the environment (Azure App Service > Configuration),
+# never hardcode credentials in the repo.
+DATABASE_URL = os.environ["DATABASE_URL"]
 
 engine = create_engine(DATABASE_URL)
 
