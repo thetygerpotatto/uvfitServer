@@ -4,10 +4,9 @@
 
 name: Build and deploy Python app to Azure Web App - uvfit
 
+# The Azure App Service was retired, so automatic deploys on push are disabled.
+# Kept for reference; it can still be run manually.
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 jobs:

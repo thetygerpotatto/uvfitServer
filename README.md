@@ -1,9 +1,9 @@
 # uvfitServer
 
-FastAPI backend for the [UVfit](https://github.com/thetygerpotatto/uvfit) mobile app: user registration and login with **bcrypt** password hashing and **JWT** auth, plus profile and health data endpoints, backed by **SQLAlchemy** (Azure SQL). Deployed to **Azure App Service** through GitHub Actions.
+FastAPI backend for the [UVfit](https://github.com/thetygerpotatto/uvfit) mobile app: user registration and login with **bcrypt** password hashing and **JWT** auth, plus profile and health data endpoints, backed by **SQLAlchemy**. It was deployed to **Azure App Service** (with an Azure SQL database) through a GitHub Actions CI/CD pipeline. The deployment has since been retired, so the workflow now only runs manually.
 
 ## Configuration
-Set these environment variables (in Azure: App Service → Configuration):
+Set these environment variables:
 
 | Variable | Description |
 |---|---|
